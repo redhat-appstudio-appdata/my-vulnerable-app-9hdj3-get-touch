@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: govwa-f0nk
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: govwa-f0nk
+    app.kubernetes.io/part-of: my-vulnerable-app
+  name: govwa-f0nk
+  namespace: rh-ee-ellin-tenant
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: govwa-f0nk
+status:
+  loadBalancer: {}
