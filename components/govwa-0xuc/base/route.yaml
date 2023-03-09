@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: govwa-0xuc
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: govwa-0xuc
+    app.kubernetes.io/part-of: my-vulnerable-app
+  name: govwa-0xuc
+  namespace: rh-ee-ellin-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: govwa-0xuc
+    weight: 100
+status: {}
